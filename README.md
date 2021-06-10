@@ -3,6 +3,10 @@ A CLI Application with Git Support to manage a Work Timesheet on your project
 
 Click [here](https://github.com/SagarDevAchar/TimesheetAssistant/releases) to download the **latest release**
 
+## Release Notes
+
+- **v1.1**: Bugfixed the Regex which was causing Total Time computational errors for the Metadata BIN File
+
 ## Requirements and Dependencies
 - **Operating System:** Windows
 - Properly set-up **Git** added to the system's **PATH** variable (if Git Support required, *TimesheetAssistant* works without Git Support too..)
