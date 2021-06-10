@@ -1,5 +1,5 @@
 pyinstaller "TimesheetAssistant.py" ^
---name="TimesheetAssistant v1.0" ^
+--name="TimesheetAssistant v1.1" ^
 --icon="TimesheetAssistant.ico" ^
 --onefile ^
 --exclude-module matplotlib ^
