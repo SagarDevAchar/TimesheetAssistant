@@ -7,12 +7,12 @@ from time import sleep
 import re
 
 APP_NAME_ASCII_ARTWORK = r"""
-  _______ _                     _               _                    _     _              _          __   ___  
- |__   __(_)                   | |             | |     /\           (_)   | |            | |        /_ | / _ \ 
-    | |   _ _ __ ___   ___  ___| |__   ___  ___| |_   /  \   ___ ___ _ ___| |_ __ _ _ __ | |_  __   _| || | | |
-    | |  | | '_ ` _ \ / _ \/ __| '_ \ / _ \/ _ \ __| / /\ \ / __/ __| / __| __/ _` | '_ \| __| \ \ / / || | | |
-    | |  | | | | | | |  __/\__ \ | | |  __/  __/ |_ / ____ \\__ \__ \ \__ \ || (_| | | | | |_   \ V /| || |_| |
-    |_|  |_|_| |_| |_|\___||___/_| |_|\___|\___|\__/_/    \_\___/___/_|___/\__\__,_|_| |_|\__|   \_/ |_(_)___/ """
+  _______ _                     _               _                    _     _              _          __  __ 
+ |__   __(_)                   | |             | |     /\           (_)   | |            | |        /_ |/_ |
+    | |   _ _ __ ___   ___  ___| |__   ___  ___| |_   /  \   ___ ___ _ ___| |_ __ _ _ __ | |_  __   _| | | |
+    | |  | | '_ ` _ \ / _ \/ __| '_ \ / _ \/ _ \ __| / /\ \ / __/ __| / __| __/ _` | '_ \| __| \ \ / / | | |
+    | |  | | | | | | |  __/\__ \ | | |  __/  __/ |_ / ____ \\__ \__ \ \__ \ || (_| | | | | |_   \ V /| |_| |
+    |_|  |_|_| |_| |_|\___||___/_| |_|\___|\___|\__/_/    \_\___/___/_|___/\__\__,_|_| |_|\__|   \_/ |_(_)_|"""
 
 session_active_artwork = """
                                       ╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╗╔  ╔═╗╔═╗╔╦╗╦╦  ╦╔═╗
@@ -30,7 +30,7 @@ def cmd(command):
 
 def terminate():
     print("\n" + "=" * 115)
-    print("\nThank You for using TimesheetAssistant v1.0 !")
+    print("\nThank You for using TimesheetAssistant v1.1 !")
     print("If you fou this code useful, please share the GitHub Repository :D")
     print("\n" + "=" * 115)
     input("\nPress ENTER to Exit...")
@@ -173,7 +173,7 @@ while True:
 
     current_work_time_seconds = (END_TIME - START_TIME).total_seconds()
 
-    previous_time_data = list(map(int, re.findall(r"\d", TIMESHEET_META_DATA['work_time'])))
+    previous_time_data = list(map(int, re.findall('[0-9]+', TIMESHEET_META_DATA['work_time'])))
     total_work_time_minutes = int(previous_time_data[0] * 1440 + previous_time_data[1] * 60 + previous_time_data[2] +
                                   current_work_time_seconds // 60)
 
